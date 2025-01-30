@@ -3,13 +3,14 @@ import SwiftUI
 
 // MARK: - ToastValue
 public struct ToastValue: Identifiable, Hashable {
-    public var id: Self { self }
+    public let id: UUID = .init()
 
     internal var icon: AnyView?
     internal var message: String
     internal var button: ToastButton?
     /// If nil, the toast will persist and not disappear. Used when displaying a loading toast.
     internal var duration: TimeInterval?
+
     public init(
         icon: (any View)? = nil,
         message: String,
@@ -54,7 +55,7 @@ public struct ToastValue: Identifiable, Hashable {
 
 // MARK: - ToastButton
 public struct ToastButton: Identifiable, Hashable {
-    public var id: Self { self }
+    public let id: UUID = .init()
     public var title: String
     public var color: Color
     public var action: () -> Void

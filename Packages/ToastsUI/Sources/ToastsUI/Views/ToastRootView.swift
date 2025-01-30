@@ -5,8 +5,8 @@ internal struct ToastRootView: View {
     @ObservedObject var manager: ToastManager
 
     // MARK: - Private Properties
-    private var models: [ToastModel] {
-        let models = isTop ? manager.models.reversed() : manager.models
+    private var models: IdentifiedArrayOf<ToastValue> {
+        let models = isTop ? IdentifiedArrayOf(uniqueElements: manager.models.reversed()) : manager.models
         return manager.isAppeared ? models : []
     }
 
@@ -23,8 +23,7 @@ internal struct ToastRootView: View {
         VStack {
             if !isTop { Spacer() }
             ZStack {
-                ForEach(models.reversed()) { model in
-//                ForEach(Array(models.reversed().enumerated()), id: \.element) { index, model in
+                ForEach(Array(models.reversed().enumerated()), id: \.element) { index, model in
                     ToastInteractingView(model: model, manager: manager)
                         .transition(
                             .modifier(
@@ -40,6 +39,13 @@ internal struct ToastRootView: View {
                                 )
                             )
                         )
+                        .padding(
+                            [isTop ? .top : .bottom],
+                            // Place front element with bottom offset -32.
+                            // Other elements stay on the same place
+                            index != (models.indices.last ?? .zero) ? -(CGFloat(index) + 32) : .zero
+                        )
+                        .scaleEffect(index != (models.indices.last ?? .zero) ? CGSize(width: 0.8, height: 0.8) : CGSize(width: 1, height: 1))
                 }
             }
             if isTop { Spacer() }

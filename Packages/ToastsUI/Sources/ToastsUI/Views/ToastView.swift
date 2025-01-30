@@ -1,7 +1,7 @@
 import SwiftUI
 
 internal struct ToastView: View {
-    @ObservedObject var model: ToastModel
+    let model: ToastValue
     @Environment(\.colorScheme) private var colorScheme
     
     private var isDark: Bool { colorScheme == .dark }
@@ -64,7 +64,7 @@ internal struct ToastView: View {
                 Capsule()
                     .fill(button.color.opacity(isDark ? 0.15 : 0.07))
                 Text(button.title)
-                    ._foregroundColor(button.color)
+                    .foregroundStyle(button.color)
                     .padding(.horizontal, 9)
             }
             .frame(minWidth: 64)
@@ -78,48 +78,38 @@ internal struct ToastView: View {
 #Preview {
     let group = VStack {
         ToastView(
-            model: .init(value:
-                    .init(
-                        icon: Image(systemName: "info.circle"),
-                        message: "This is a toast message",
-                        button: .init(title: "Action", color: .red, action: {})
-                    )
+            model: .init(
+                icon: Image(systemName: "info.circle"),
+                message: "This is a toast message",
+                button: .init(title: "Action", color: .red, action: {})
             )
         )
         ToastView(
-            model: .init(value:
-                    .init(
-                        icon: Image(systemName: "info.circle"),
-                        message: "This is a toast message",
-                        button: .init(title: "Action", action: {})
-                    )
+            model: .init(
+                icon: Image(systemName: "info.circle"),
+                message: "This is a toast message",
+                button: .init(title: "Action", action: {})
             )
         )
         ToastView(
-            model: .init(value:
-                    .init(
-                        icon: Image(systemName: "info.circle"),
-                        message: "This is a toast message",
-                        button: nil
-                    )
+            model: .init(
+                icon: Image(systemName: "info.circle"),
+                message: "This is a toast message",
+                button: nil
             )
         )
         ToastView(
-            model: .init(value:
-                    .init(
-                        icon: nil,
-                        message: "This is a toast message",
-                        button: nil
-                    )
+            model: .init(
+                icon: nil,
+                message: "This is a toast message",
+                button: nil
             )
         )
         ToastView(
-            model: .init(value:
-                    .init(
-                        icon: nil,
-                        message: "Copied",
-                        button: nil
-                    )
+            model: .init(
+                icon: nil,
+                message: "Copied",
+                button: nil
             )
         )
     }

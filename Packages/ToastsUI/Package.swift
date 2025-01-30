@@ -14,12 +14,14 @@ let package = Package(
     ],
     dependencies: [
       .package(url: "https://github.com/sunghyun-k/swiftui-window-overlay.git", from: "1.0.0"),
+      .package(url: "https://github.com/pointfreeco/swift-identified-collections?tab=readme-ov-file", from: "1.1.0"),
     ],
     targets: [
         .target(
             name: "ToastsUI",
             dependencies: [
               .product(name: "WindowOverlay", package: "swiftui-window-overlay"),
+              .product(name: "IdentifiedCollections", package: "swift-identified-collections?tab=readme-ov-file")
             ]
         ),
     ],

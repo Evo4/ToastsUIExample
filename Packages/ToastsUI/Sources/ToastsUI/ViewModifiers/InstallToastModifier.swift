@@ -16,7 +16,7 @@ private struct InstallToastModifier: ViewModifier {
                 \.presentToast,
                  PresentToastAction(_manager: manager)
             )
-            ._background {
+            .background {
                 InstallToastView(manager: manager)
             }
             ._onChange(of: position, initial: true) {

@@ -9,7 +9,7 @@ extension UIColor {
 
 extension Color {
     internal init(light: Color, dark: Color) {
-        self.init(_uiColor: UIColor.init(light: UIColor(light), dark: UIColor(dark)))
+        self.init(uiColor: UIColor.init(light: UIColor(light), dark: UIColor(dark)))
     }
 }
 

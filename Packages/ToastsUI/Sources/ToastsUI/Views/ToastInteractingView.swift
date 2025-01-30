@@ -1,14 +1,13 @@
 import SwiftUI
 
 internal struct ToastInteractingView: View {
-    
-    @ObservedObject var model: ToastModel
-    let manager: ToastManager
+    let model: ToastValue
+    @ObservedObject var manager: ToastManager
     @GestureState private var yOffset: CGFloat?
     @State private var dismissTask: Task<Void, any Error>?
-    
+
     private var isDragging: Bool { yOffset != nil }
-    
+
     var body: some View {
         main
             ._onChange(of: isDragging) { _, newValue in
@@ -19,17 +18,20 @@ internal struct ToastInteractingView: View {
             }
             ._onChange(of: model.duration == nil, initial: true) { _, newValue in
                 startDismissTask()
+
+                debugPrint("[\(Date.now)] startDismissTask, model: \(model)", terminator: "\n\n")
             }
     }
-    
+
     @MainActor
     private var main: some View {
         ToastView(model: model)
             .offset(y: yOffset ?? 0)
-            .gesture(dragGesture)
+            .simultaneousGesture(dragGesture)
             .animation(.spring, value: isDragging)
+            .animation(.easeInOut(duration: 0.1), value: yOffset)
     }
-    
+
     @MainActor
     private var dragGesture: some Gesture {
         DragGesture(minimumDistance: 0)
@@ -54,7 +56,7 @@ internal struct ToastInteractingView: View {
                 }
             }
     }
-    
+
     private func startDismissTask() {
         dismissTask?.cancel()
         dismissTask = Task {

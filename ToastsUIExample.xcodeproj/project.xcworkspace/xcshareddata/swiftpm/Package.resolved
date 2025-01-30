@@ -1,6 +1,24 @@
 {
-  "originHash" : "aeea3fe2fa52e401fc8ecf79fb25ff756b23332c080d5f6df03376d363c75827",
+  "originHash" : "9d35b9d058868b9287f7429b730b80c435230adb98d2a7092686d3c40e6ac670",
   "pins" : [
+    {
+      "identity" : "swift-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-collections",
+      "state" : {
+        "revision" : "671108c96644956dddcd89dd59c203dcdb36cec7",
+        "version" : "1.1.4"
+      }
+    },
+    {
+      "identity" : "swift-identified-collections?tab=readme-ov-file",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-identified-collections?tab=readme-ov-file",
+      "state" : {
+        "revision" : "322d9ffeeba85c9f7c4984b39422ec7cc3c56597",
+        "version" : "1.1.1"
+      }
+    },
     {
       "identity" : "swiftui-window-overlay",
       "kind" : "remoteSourceControl",
