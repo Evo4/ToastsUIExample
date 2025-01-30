@@ -1,6 +1,6 @@
 import Foundation
 
 public enum ToastPosition {
-  case top
-  case bottom
+    case top
+    case bottom
 }
