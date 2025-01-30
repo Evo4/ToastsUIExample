@@ -24,6 +24,7 @@ internal struct ToastRootView: View {
             if !isTop { Spacer() }
             ZStack {
                 ForEach(models.reversed()) { model in
+//                ForEach(Array(models.reversed().enumerated()), id: \.element) { index, model in
                     ToastInteractingView(model: model, manager: manager)
                         .transition(
                             .modifier(

@@ -1,7 +1,10 @@
 import Foundation
 import SwiftUI
 
-public struct ToastValue {
+// MARK: - ToastValue
+public struct ToastValue: Identifiable, Hashable {
+    public var id: Self { self }
+
     internal var icon: AnyView?
     internal var message: String
     internal var button: ToastButton?
@@ -18,6 +21,7 @@ public struct ToastValue {
         self.button = button
         self.duration = min(max(0, duration), 10)
     }
+
     @_disfavoredOverload
     internal init(
         icon: (any View)? = nil,
@@ -30,12 +34,31 @@ public struct ToastValue {
         self.button = button
         self.duration = duration
     }
+
+    // MARK: - Equatable
+    public static func == (lhs: ToastValue, rhs: ToastValue) -> Bool {
+        lhs.message == rhs.message &&
+        lhs.button == rhs.button &&
+        lhs.duration == rhs.duration &&
+        lhs.id == rhs.id
+    }
+
+    // MARK: - Hashable
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(message)
+        hasher.combine(button)
+        hasher.combine(duration)
+    }
 }
 
-public struct ToastButton {
+// MARK: - ToastButton
+public struct ToastButton: Identifiable, Hashable {
+    public var id: Self { self }
     public var title: String
     public var color: Color
     public var action: () -> Void
+
     public init(
         title: String,
         color: Color = .primary,
@@ -44,5 +67,19 @@ public struct ToastButton {
         self.title = title
         self.color = color
         self.action = action
+    }
+
+    // MARK: - Equatable
+    public static func == (lhs: ToastButton, rhs: ToastButton) -> Bool {
+        lhs.title == rhs.title &&
+        lhs.color == rhs.color &&
+        lhs.id == rhs.id
+    }
+
+    // MARK: - Hashable
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(title)
+        hasher.combine(color)
     }
 }
