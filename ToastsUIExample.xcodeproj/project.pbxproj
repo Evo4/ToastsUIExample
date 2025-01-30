@@ -6,23 +6,29 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		45F9D0582D4BD9B6001C2E30 /* ToastsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 45F9D0572D4BD9B6001C2E30 /* ToastsUI */; };
+		45F9D05F2D4BD9BC001C2E30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F9D0592D4BD9BC001C2E30 /* Preview Assets.xcassets */; };
+		45F9D0602D4BD9BC001C2E30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F9D05B2D4BD9BC001C2E30 /* Assets.xcassets */; };
+		45F9D0612D4BD9BC001C2E30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F9D05C2D4BD9BC001C2E30 /* ContentView.swift */; };
+		45F9D0622D4BD9BC001C2E30 /* ToastsUIExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F9D05D2D4BD9BC001C2E30 /* ToastsUIExampleApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		45F9D0442D4BD92A001C2E30 /* ToastsUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToastsUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45F9D0552D4BD99E001C2E30 /* ToastsUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ToastsUI; path = Packages/ToastsUI; sourceTree = "<group>"; };
+		45F9D0592D4BD9BC001C2E30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		45F9D05B2D4BD9BC001C2E30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45F9D05C2D4BD9BC001C2E30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		45F9D05D2D4BD9BC001C2E30 /* ToastsUIExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsUIExampleApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		45F9D0462D4BD92A001C2E30 /* ToastsUIExample */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ToastsUIExample;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		45F9D0412D4BD92A001C2E30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F9D0582D4BD9B6001C2E30 /* ToastsUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +38,9 @@
 		45F9D03B2D4BD92A001C2E30 = {
 			isa = PBXGroup;
 			children = (
-				45F9D0462D4BD92A001C2E30 /* ToastsUIExample */,
+				45F9D0552D4BD99E001C2E30 /* ToastsUI */,
+				45F9D05E2D4BD9BC001C2E30 /* ToastsUIExample */,
+				45F9D0562D4BD9B6001C2E30 /* Frameworks */,
 				45F9D0452D4BD92A001C2E30 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +51,32 @@
 				45F9D0442D4BD92A001C2E30 /* ToastsUIExample.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		45F9D0562D4BD9B6001C2E30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45F9D05A2D4BD9BC001C2E30 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				45F9D0592D4BD9BC001C2E30 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		45F9D05E2D4BD9BC001C2E30 /* ToastsUIExample */ = {
+			isa = PBXGroup;
+			children = (
+				45F9D05D2D4BD9BC001C2E30 /* ToastsUIExampleApp.swift */,
+				45F9D05C2D4BD9BC001C2E30 /* ContentView.swift */,
+				45F9D05B2D4BD9BC001C2E30 /* Assets.xcassets */,
+				45F9D05A2D4BD9BC001C2E30 /* Preview Content */,
+			);
+			path = ToastsUIExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,11 +94,9 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				45F9D0462D4BD92A001C2E30 /* ToastsUIExample */,
-			);
 			name = ToastsUIExample;
 			packageProductDependencies = (
+				45F9D0572D4BD9B6001C2E30 /* ToastsUI */,
 			);
 			productName = ToastsUIExample;
 			productReference = 45F9D0442D4BD92A001C2E30 /* ToastsUIExample.app */;
@@ -109,6 +141,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F9D05F2D4BD9BC001C2E30 /* Preview Assets.xcassets in Resources */,
+				45F9D0602D4BD9BC001C2E30 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F9D0612D4BD9BC001C2E30 /* ContentView.swift in Sources */,
+				45F9D0622D4BD9BC001C2E30 /* ToastsUIExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +296,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -289,6 +326,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,6 +362,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		45F9D0572D4BD9B6001C2E30 /* ToastsUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ToastsUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 45F9D03C2D4BD92A001C2E30 /* Project object */;
 }
